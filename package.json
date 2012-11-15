@@ -1,0 +1,28 @@
+{
+  "name": "trail",
+  "version": "1.0.0",
+  "description": "check an array of search paths to find a file",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nathan7/trail.git"
+  },
+  "keywords": [
+    "fs",
+    "exists",
+    "search",
+    "path"
+  ],
+  "author": "Nathan Zadoks",
+  "license": "BSD",
+  "dependencies": {
+    "async": "~0.1.22"
+  },
+  "devDependencies": {
+    "should": "~1.2.1",
+    "mocha": "~1.7.0"
+  }
+}
