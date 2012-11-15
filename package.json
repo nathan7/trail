@@ -18,9 +18,6 @@
   ],
   "author": "Nathan Zadoks",
   "license": "BSD",
-  "dependencies": {
-    "async": "~0.1.22"
-  },
   "devDependencies": {
     "should": "~1.2.1",
     "mocha": "~1.7.0"

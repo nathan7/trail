@@ -1,15 +1,20 @@
 var fs = require('fs');
 var path = require('path');
-var async = require('async');
 
 module.exports = trail;
 
 function trail(paths, fname, cb) {
-    async.detect(paths.map(function(dirname) {
+    var pathlist = paths.map(function(dirname) {
         return path.join(dirname, fname);
-    }), fs.exists || path.exists, function(fpath) {
-        cb(null, fpath);
     });
+
+    (function checkPath(pathname) {
+        (fs.exists || path.exists)(pathname, function(exists) {
+            if (exists) return cb(null, pathname);
+            if (!pathlist.length) return cb(null, null);
+            checkPath(pathlist.shift());
+        });
+    })(pathlist.shift());
 }
 
 trail.bail = bail;
