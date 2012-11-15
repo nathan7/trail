@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/nathan7/trail.png?branch=master)](https://travis-ci.org/nathan7/trail)
+
 trail
 =====
 trail checks for a file or directory on a bunch of search paths.
