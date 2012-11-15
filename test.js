@@ -16,7 +16,7 @@ describe('trail', function() {
         trail(testdirs, testfile, function(err, found) {
             should.not.exist(err);
             found.should.equal(path.join(testdirs[1], testfile));
-            fs.existsSync(found).should.equal(true);
+            (fs.existsSync || path.existsSync)(found).should.equal(true);
             done();
         });
     });
@@ -34,7 +34,7 @@ describe('bail', function() {
         trail.bail(testdirs, testfile, function(err, found) {
             should.not.exist(err);
             found.should.equal(path.join(testdirs[1], testfile));
-            fs.existsSync(found).should.equal(true);
+            (fs.existsSync || path.existsSync)(found).should.equal(true);
             done();
         });
     });
